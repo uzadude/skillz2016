@@ -18,7 +18,7 @@ from peas.tasks.polebalance import PoleBalanceTask
 # Create a factory for genotypes (i.e. a function that returns a new
 # instance each time it is called)
 
-genotype = lambda: NEATGenotype(inputs=33*33,
+genotype = lambda: NEATGenotype(inputs=33*33 + 2,
                                 outputs=4,
                                 weight_range=(-5., 5.),
                                 types=['sigmoid'])

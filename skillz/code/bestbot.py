@@ -20,13 +20,21 @@ def do_turn(game):
        return
 
 
-    mat = np.array([0] * 33 * 33, dtype=float)
+    mat = np.array([0] * (33 * 33 + 2), dtype=float)
     #game.debug([p.location for p in game.enemy_pirates()])
     for p in game.enemy_pirates():
         mat[ p.location[0]*33+p.location[1] ] = -1
 
     for p in game.treasures():
         mat[ p.location[0]*33+p.location[1] ] = 1
+
+    if mypirate.has_treasure:
+        mat[-1] = 1
+
+    for enemy in game.enemy_pirates():
+        if game.in_range(mypirate, enemy):
+            mat[-2] = 1
+
 
     outputs = n.feed(mat)[-4:]
     #for i in range(0,4):
