@@ -10,7 +10,7 @@ cd ~/git/skillz2016/starter_kit
 
 FIRST_BOT=~/git/skillz2016/skillz/code/bestbot.py
 SECOND_BOT=bots/python/evil_bot.py
-MAP=maps/dont_crash.map
+MAP=maps/neat_simple_map.map
 
 echo $1
 
