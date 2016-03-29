@@ -26,7 +26,10 @@ def do_turn(game):
         mat[ p.location[0]*33+p.location[1] ] = -1
 
     for p in game.treasures():
-        mat[ p.location[0]*33+p.location[1] ] = 1
+        if mat[p.location[0]*33+p.location[1]] == -1:
+            mat[p.location[0]*33+p.location[1]] = 3
+        else:
+            mat[p.location[0]*33+p.location[1]] = 1
 
     if mypirate.has_treasure:
         mat[-1] = 1
@@ -83,5 +86,6 @@ def try_attack(game, pirate):
     for enemy in game.enemy_pirates():
         if game.in_range(pirate, enemy):
             game.attack(pirate, enemy)
-            return True
+            game.debug("ATTACHKED !!!!!: ")
+        return True
     return False
