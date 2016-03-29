@@ -1,8 +1,0 @@
-turn   41 bot [bestbot] invalid actions:
-The order: 'o 14 16 sssss' is invalid # Cannot move more than 1 step if carrying a treasure
-turn   45 bot [bestbot] invalid actions:
-The order: 'o 14 16 sssss' is invalid # Cannot move more than 1 step if carrying a treasure
-turn   46 bot [bestbot] invalid actions:
-The order: 'o 14 16 sssss' is invalid # Cannot move more than 1 step if carrying a treasure
-turn   48 bot [bestbot] invalid actions:
-The order: 'o 15 16 sssss' is invalid # Cannot move more than 1 step if carrying a treasure
