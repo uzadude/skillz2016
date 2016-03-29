@@ -55,7 +55,7 @@ class SkillzTask(object):
 
         import subprocess
         #print "-----start-----"
-        subprocess.call(["./run.sh", str(self.N)], shell=True)
+        subprocess.call(["./run.sh " + str(self.N)], shell=True)
         #print "----- end -----"
 
         f = open('/tmp/skillz_blah_end', "r")

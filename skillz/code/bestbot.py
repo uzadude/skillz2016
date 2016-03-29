@@ -32,30 +32,33 @@ def do_turn(game):
 
     mx = outputs.argmax(axis=0)
 
+
     if mx == 0: # try to attack
         try_attack(game, mypirate)
     elif mx == 1: # go to treasure
         opts=[]
         if len(game.treasures())>0:
-            opts = game.get_sail_options(mypirate, game.treasures()[0], int(outputs[mx]*6))
+            opts = game.get_sail_options(mypirate, game.treasures()[0], getSteps(mypirate, outputs, mx))
 
         if len(opts)>0:
             game.set_sail(mypirate, opts[0])
     elif mx == 2: # go to enemy
         opts=[]
         if len(game.enemy_pirates())>0:
-            opts = game.get_sail_options(mypirate, game.enemy_pirates()[0], int(outputs[mx]*6))
+            opts = game.get_sail_options(mypirate, game.enemy_pirates()[0], getSteps(mypirate, outputs, mx))
 
         if len(opts)>0:
             game.set_sail(mypirate, opts[0])
     elif mx == 3: # go home
-        if mypirate.has_treasure:
-            steps=1
-        else:
-            steps = int(outputs[mx]*6)
-        opts = game.get_sail_options(mypirate, mypirate.initial_loc, steps)
+        opts = game.get_sail_options(mypirate, mypirate.initial_loc, getSteps(mypirate, outputs, mx))
         game.set_sail(mypirate, opts[0])
 
+def getSteps(mypirate, outputs, mx):
+    if mypirate.has_treasure:
+        steps = 1
+    else:
+        steps = int(outputs[mx]*6)
+    return steps
 
 
 def try_attack(game, pirate):
