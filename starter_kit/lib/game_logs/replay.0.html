@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+-->
+    <title>Treasurez Game</title>
+
+    <link href="../visualizer/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../visualizer/css/site.css" rel="stylesheet">
+
+    <script type="json" id="replayData">
+        {"status": ["alive", "alive"], "replaydata": {"lighthouses": [], "cutoff": "Maximum points", "defense_reload_turns": 60, "treasure_spawn_turns": 2000, "defense_expiration_turns": 3, "ants": [[26, 4, 0, 29, 0, ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "nnnnn", "-", "-", "sseee", "-", "-", "-", "-", "-", "sssww", "-", "eeeee", "-", "-", "wwwww", "eeeee", "-", "eeeee"], [], 0, "", "0000000000000000000000000000", [-1000, -1], [-1000], "0000000000000000000000000000", [16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16], "0000000000000000000000000000", "0000000000000000000000000000", "0000000000000000000000000000"], [26, 28, 0, 29, 1, ["nnnnnn", "nnnnnn", "wwwwww", "wwwwww", "s", "s", "s", "s", "s", "s", "s", "s", "s", "s", "s", "s", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e"], [], 0, "", "0001111111111111111111111110", [-1000, -1], [-1000], "0000000000000000000000000000", [16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16], "0000000000000000000000000000", "0000000000000000000000000000", "0000000000000000000000000000"]], "zones": [[], []], "hive_history": [[0], [0]], "player_seed": -268074683, "winning_turn": 28, "actions_per_turn": 6, "hills": [], "forts": [], "food": [], "revision": 3, "map": {"rows": 28, "data": [".................................", ".................................", ".................................", ".................................", ".................................", ".................................", ".................................", ".................................", ".................................", ".................................", ".................................", ".................................", ".................................", ".................................", ".................................", ".................................", ".................................", ".................................", ".................................", ".................................", ".................................", ".................................", ".................................", ".................................", ".................................", ".................................", "...............a............b....", "................................."], "cols": 33}, "bonus": [0, 0], "reload_turns": 30, "rejected": [], "turntime": 1000, "treasures": [[0, [14, 16], 1, "1110000000000000000000000000"]], "scores": [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]], "ranking_turn": 28, "engine_seed": 336684348, "viewradius2": 20000, "loadtime": 10000, "turns": 100, "attackradius2": 16, "players": 2, "powerups": [], "maxpoints": 1}, "challenge": "pirates", "winner_names": ["evil_bot"], "debug_messages": [[[2, 0, ["TURN: 1"]], [3, 0, ["TURN: 2", "WARNING: Pirate 0 tried to set sail to its current location."]], [4, 0, ["TURN: 3"]], [5, 0, ["TURN: 4", "WARNING: Pirate 0 tried to set sail to its current location."]], [6, 0, ["TURN: 5"]], [7, 0, ["TURN: 6", "WARNING: Pirate 0 tried to set sail to its current location."]], [8, 0, ["TURN: 7"]], [9, 0, ["TURN: 8"]], [10, 0, ["TURN: 9", "WARNING: Pirate 0 tried to set sail to its current location."]], [11, 0, ["TURN: 10"]], [12, 0, ["TURN: 11"]], [13, 0, ["TURN: 12"]], [14, 0, ["TURN: 13"]], [15, 0, ["TURN: 14"]], [16, 0, ["TURN: 15"]], [17, 0, ["TURN: 16"]], [18, 0, ["TURN: 17"]], [19, 0, ["TURN: 18"]], [20, 0, ["TURN: 19"]], [21, 0, ["TURN: 20"]], [22, 0, ["TURN: 21"]], [23, 0, ["TURN: 22"]], [24, 0, ["TURN: 23"]], [25, 0, ["TURN: 24"]], [26, 0, ["TURN: 25"]], [27, 0, ["TURN: 26"]], [28, 0, ["TURN: 27"]], [29, 0, ["TURN: 28"]]], []], "rank": [1, 0], "playerturns": [28, 28], "score": [0, 1], "replayformat": "json", "location": "localhost", "game_length": 28, "game_id": 0, "playernames": ["bestbot", "evil_bot"]}
+    </script>
+    <script>
+        window.local_run = true;
+        window.pirates_data_dir = '../visualizer/data/';
+        window.replayData = document.getElementById('replayData').innerHTML;
+        window.color1 = '1';
+        window.color2 = '2';
+    </script>
+
+    <script src="../visualizer/js/Util.js"></script>
+    <script src="../visualizer/js/Pirate.js"></script>
+    <script src="../visualizer/js/Application.js"></script>
+    <script src="../visualizer/js/Config.js"></script>
+    <script src="../visualizer/js/Const.js"></script>
+    <script src="../visualizer/js/Director.js"></script>
+    <script src="../visualizer/js/ImageManager.js"></script>
+    <script src="../visualizer/js/Replay.js"></script>
+
+    <script src="../visualizer/js/canvas/CanvasElement.js"></script>
+    <script src="../visualizer/js/canvas/CanvasElementAbstractMap.js"></script>
+    <script src="../visualizer/js/canvas/CanvasElementMap.js"></script>
+    <script src="../visualizer/js/canvas/CanvasElementPiratesMap.js"></script>
+    <script src="../visualizer/js/canvas/CanvasElementFogPattern.js"></script>
+    <script src="../visualizer/js/canvas/CanvasElementFog.js"></script>
+    <script src="../visualizer/js/canvas/w.js"></script>
+    <script src="../visualizer/js/canvas/CanvasElementShiftedMap.js"></script>
+
+    <script src="../visualizer/js/lib/angular.min.js"></script>
+    <script src="../visualizer/js/controls.js"></script>
+
+</head>
+<body class="page_game game" ng-app="visualizerApp" ng-controller="VisualizerCtrl">
+
+    <div class="container-fluid">
+        <button type="button" class="btn-debug"></button>
+
+        <div class="row">
+            <div class="score">
+                <div class="name">{{visualizer.state.replay.meta['playernames'][1]}}</div>
+                <div class="value" style="background-image: url(../visualizer/data/img/ScoreCircles/ScoreCircle_2.png);">
+                    {{visualizer.state.replay.scores[turn][1]}}
+                </div>
+                <div class="value" style="background-image: url(../visualizer/data/img/ScoreCircles/ScoreCircle_1.png);">
+                    {{visualizer.state.replay.scores[turn][0]}}
+                </div>
+                <div class="name">{{visualizer.state.replay.meta['playernames'][0]}}</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="avatar game-visible">
+                    <div class="image">
+                        <img src="../visualizer/data/img/Avatars/021_Avatar_owel_1.png" />
+                    </div>
+                    <div class="title">{{visualizer.state.replay.meta['playernames'][0]}} </div>
+                    <div class="progress">
+                        <div class="ball">{{visualizer.state.replay.scores[turn][0]}}</div>
+                        <div class="in" style="height: {{visualizer.state.replay.scores[turn][0] > maxpoints ? (69+'%') : (visualizer.state.replay.scores[turn][0]*69 / maxpoints) + '%'}}; background-image: url(../visualizer/data/img/ScoreBars/ScoreBar_1.png);">
+                            <i></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="code pull-left debug-visible">
+                    <div ng-repeat="line in debugMessages[0][turn]" class="debug-line">
+                        <span class="debug-message debug-level{{line.level}}">{{line.message}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="board">
+                    <div class="water">
+                        <!--board-->
+                        <div class="canvas-wrapper">
+                            <div id="game-canvas"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="avatar game-visible">
+                    <div class="image">
+                        <img src="../visualizer/data/img/Avatars/021_Avatar_owel_2.png" />
+                    </div>
+                    <div class="title">{{ visualizer.state.replay.meta['playernames'][1]}} </div>
+                    <div class="progress">
+                        <div class="ball">{{visualizer.state.replay.scores[turn][1]}}</div>
+                        <div class="in" style="height: {{visualizer.state.replay.scores[turn][1] > maxpoints ? (69+'%') : (visualizer.state.replay.scores[turn][1]*69 / maxpoints) + '%'}}; background-image: url(../visualizer/data/img/ScoreBars/ScoreBar_2.png)"><i></i></div>
+                    </div>
+                </div>
+                <div class="code pull-right debug-visible">
+                    <div ng-repeat="line in debugMessages[1][turn]" class="debug-line">
+                        <span class="debug-message debug-level{{line.level}}">{{line.message}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row text-center player">
+            <div class="col-md-2">
+                <div class="avatar debug-visible">
+                    <div class="image">
+                        <img src="../visualizer/data/img/Avatars/021_Avatar_owel_1.png" />
+                    </div>
+                    <div class="title">{{ visualizer.state.replay.meta['playernames'][0]}} </div>
+                    <div class="value left">{{visualizer.state.replay.scores[turn][0]}}</div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="text">Turn {{ turn }}/{{ visualizer.state.replay.duration }}</div>
+
+                <div class="btn-group" role="group">
+                    <div class="btn left"></div>
+                    <button type="button" class="btn first" ng-click="firstTurn()"></button>
+                    <button type="button" class="btn slower"  ng-click="speed(-1)"></button>
+                    <button type="button" class="btn prev" ng-click="prevTurn()"></button>
+
+                    <button type="button" class="btn play" ng-hide="playing"  ng-click="togglePlay()"></button>
+                    <button type="button" class="btn pause" ng-show="playing"  ng-click="togglePlay()"></button>
+
+                    <button type="button" class="btn next" ng-click="nextTurn()"></button>
+                    <button type="button" class="btn faster" ng-click="speed(1)"></button>
+                    <button type="button" class="btn last" ng-click="lastTurn()"></button>
+                    <div class="btn right"></div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="avatar debug-visible">
+                    <div class="image">
+                        <img src="../visualizer/data/img/Avatars/021_Avatar_owel_2.png" />
+                    </div>
+                    <div class="title">{{ visualizer.state.replay.meta['playernames'][1]}}</div>
+                    <div class="value right">{{visualizer.state.replay.scores[turn][1]}} </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../visualizer/lib/jquery-1.9.1.min.js"></script>
+    <script src="../visualizer/lib/bootstrap.min.js"></script>
+    <script src="../visualizer/lib/site.js"></script>
+
+</body>
+</html>
