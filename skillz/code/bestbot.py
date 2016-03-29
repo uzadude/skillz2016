@@ -16,6 +16,9 @@ def do_turn(game):
 
     mypirate = game.my_pirates()[0]
 
+    if mypirate.turns_to_sober>0:
+       return
+
 
     mat = np.array([0] * 33 * 33, dtype=float)
     #game.debug([p.location for p in game.enemy_pirates()])

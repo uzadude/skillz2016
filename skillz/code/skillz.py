@@ -24,7 +24,7 @@ genotype = lambda: NEATGenotype(inputs=33*33,
                                 types=['sigmoid'])
 
 # Create a population
-pop = NEATPopulation(genotype, popsize=5)
+pop = NEATPopulation(genotype, popsize=10)
     
 # Create a task
 
@@ -36,7 +36,7 @@ class SkillzTask(object):
         """ Perform a single run of this task """
         # Convert to a network if it is not.
 
-        self.N=self.N+1
+        self.N = self.N + 1
 
         if not isinstance(network, NeuralNetwork):
             network = NeuralNetwork(network)
@@ -78,15 +78,15 @@ class SkillzTask(object):
         return ret
 
     def solve(self, network):
-        return self.evaluate(network)['fitness'] > 0.9
+        return self.evaluate(network)['fitness'] > 900
 
 skillz = SkillzTask()
 
 # Run the evolution, tell it to use the task as an evaluator
 #best = pop.epoch(generations=1, evaluator=skillz, solution=skillz)['champions'][0]
 
-pop.epoch(generations=10, evaluator=skillz, solution=skillz)
+best = pop.epoch(generations=50, evaluator=skillz, solution=skillz)['champions'][0]
 
-#print NeuralNetwork(best).feed(np.array([2,3], dtype=float))[-1]*100
+print "BEST:", best.stats
 
 
